@@ -1,0 +1,16 @@
+<% @properties.each do |property| %>
+
+	<div class="col-4">
+		<div class="property borde">
+			<%= link_to property_path(property) do %>
+
+				<div class="property-thumb" style="background-image: url(<%= property_thumbnail_url(property) %>)"></div>
+				
+				<h3 class="h5 mt-3 ml-3"><%= link_to property.name, property_path(property) %></h3>
+				<p class="mt-2 ml-3 business-location"><i class ="mr-2" width="12" data-feather="map-pin"></i><%= property.address %></p>
+
+			<% end %>
+		</div>
+	</div>
+
+<% end %>

@@ -1,0 +1,64 @@
+<section class="text-center mt">
+<h2>Editar <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group">
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name, autofocus: "true", class: "form-control", placeholder: "Digite seu nome" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Digite ultimo nome" %>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Digite seu email" %>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :company %><br/>
+      <%= f.text_field :company, class: "form-control", placeholder: "Digite no seu estabelecimento" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Atualmente aguardando confirmação para: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+      <%= f.label :password %><i>(deixe em branco se não quiser alterá-lo)</i><br/>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Digite nova senha" %>
+      <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Digite a senha novamente" %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "Digite a sua senha para salvar alterações" %>
+    </div>
+  
+  <div class="actions">
+    <%= f.submit "Atualizar", class: "bnt btn-submit" %>
+  </div><br>
+<% end %>
+<%= link_to "Voltar", :back %><br><br><br><br>
+
+<p>Unhappy? <%= link_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+
+</section>

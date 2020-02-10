@@ -1,0 +1,17 @@
+<section class="form-auth text-center">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <h1 class="h3 mb-3 font-weight-normal">Cadastrar-se</h1>
+    <%= render "devise/shared/error_messages", resource: resource %>
+     
+      <%= f.text_field :first_name, autofocus: "true", class: "form-control", placeholder: "Digite seu nome" %> <br>
+      <%= f.text_field :last_name, class: "form-control", placeholder: "Digite ultimo nome" %><br>
+      <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Digite seu email" %><br>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Digite novo senha" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Digite a senha novamente" %>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+  <% end %> 
+   
+<%= render "devise/shared/links" %>
+
+</section>

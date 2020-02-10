@@ -21,7 +21,14 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 
+#opcional image upload to Amazon S3
+gem 'carrierwave', "0.10.0"
+gem 'fog', '~> 1.37.0'
+
+#image resizing
+gem 'mini_magick'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -40,6 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'figaro'
 end
 
 group :test do

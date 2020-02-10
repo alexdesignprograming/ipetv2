@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="mb-3">Estabelecimento</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.name %></td>
+        <td><%= property.address %></td>
+        <td><%= link_to 'Ver', property %></td>
+        <td><%= link_to 'Editar', edit_property_path(property) %></td>
+        <td><%= link_to 'Deletar', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Estabelecimento', new_property_path, class: "btn btn-primary" %>
