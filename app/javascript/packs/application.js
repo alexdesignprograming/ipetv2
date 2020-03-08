@@ -13,6 +13,13 @@ global.$ = global.jQuery = jQuery
 window.$ = window.jQuery = jQuery
 
 require ("bootstrap");
+
+import toastr from 'toastr';
+toastr.options = {
+	progressBar: true
+}
+global.toastr = toastr;
+
 require ("./includes/properties");
 
 
